@@ -1,0 +1,136 @@
+.playersInfo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    width: 320px;
+    height: 730px;
+    border: 2px solid #1BAFBA;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.playerInfo {
+    border-radius: 5px;
+    width: 300px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.nickname,
+.capital,
+.avatar {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+    color: white;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 100px;
+}
+
+.capital {
+    color: lightgray;
+}
+
+.capital .amount {
+    color: white;
+    font-size: 22px;
+}
+
+.playerInfo_1 {
+    background: #E85D5A;
+}
+
+.playerInfo_2 {
+    background: #62B5EC;
+}
+
+.playerInfo_3 {
+    background: #A9DA86;
+}
+
+.playerInfo_4 {
+    background: #C7A2EE;
+}
+
+.playerInfo_5 {
+    background: rgb(247, 177, 120);
+}
+
+.player {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.player_1 {
+    background: transparent url(../img/flash-logo-png-15-transparent.png) no-repeat;
+    background-size: 30px 30px;
+}
+
+.player_2 {
+    background: transparent url('../img/68-686231_iron-man-arc-reactor-drawing.png') no-repeat;
+    background-size: 30px 30px;
+}
+
+.player_3 {
+    background: transparent url('../img/u5nYCMKNpKcszHx9mbgRhTqn9.png') no-repeat;
+    background-size: 30px 30px;
+}
+
+.player_4 {
+    background: transparent url('../img/the-joker-icon-71.png') no-repeat;
+    background-size: 36px 36px;
+    background-position: -3px -3px;
+}
+
+.player_5 {
+    background: transparent url('../img/marvel.png') no-repeat;
+    background-size: 32px 32px;
+}
+
+.playerInfo_1 .avatar {
+    background: url(../img/flash-logo-png-15-transparent.png) no-repeat;
+    background-size: 80px 80px;
+}
+
+.playerInfo_2 .avatar {
+    background: url('../img/68-686231_iron-man-arc-reactor-drawing.png') no-repeat;
+    background-size: 80px 80px;
+}
+
+.playerInfo_3 .avatar {
+    background: url('../img/u5nYCMKNpKcszHx9mbgRhTqn9.png') no-repeat;
+    background-size: 80px 80px;
+}
+
+.playerInfo_4 .avatar {
+    background: url('../img/the-joker-icon-71.png') no-repeat;
+    background-size: 80px 80px;
+}
+
+.playerInfo_5 .avatar {
+    background: url('../img/marvel.png') no-repeat;
+    background-size: 80px 80px;
+}
+
+@media(max-width:1420px) {
+    .playerInfo {
+        width: 150px;
+    }
+    .playersInfo {
+        width: 160px;
+    }
+}

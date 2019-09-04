@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton|Comfortaa|Cookie');
+@font-face {
+    font-family: Kabel;
+    src: url(../font/Monopoly_Bold.ttf);
+}
+
+@font-face {
+    font-family: Digital;
+    src: url(../font/digital-7.ttf);
+}
+
+* {
+    font-family: 'Kabel';
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(rgb(255, 186, 201) 1px, transparent 1px), linear-gradient(#fff 4px, transparent 0), #fff;
+    background-size: 25px 25px, 100%;
+    transition: 0.4s background ease-in-out;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-left: 1330px;
+    margin-top: 10px;
+}
+
+
+/* rgb(196, 60, 60) */
+
+#button {
+    border: 3px solid rgb(255, 0, 98);
+    border-right: 1.5px solid rgb(255, 0, 98);
+    padding: 9px 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    background: #323232;
+    text-shadow: none;
+    font-family: sans-serif;
+    border-radius: 100px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    max-width: 150px;
+    transition: all 0.2s ease;
+}
+
+#button:active {
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+#button:hover {
+    border: 3px solid #f1c40f;
+    color: #fff;
+    background: #f1c40f;
+}
+
+.day #button {
+    border: 3px solid #f1c40f;
+    color: #f1c40f;
+    background: #323232;
+}
+
+.day #button:hover {
+    border: 3px solid #f1c40f;
+    color: #fff;
+    background: #f1c40f;
+}
+
+.day {
+    background-color: #323232;
+    transition: 0.4s background ease-in-out;
+}
+
+#rules {
+    border: 3px solid rgb(255, 0, 98);
+    border-left: 1.5px solid rgb(255, 0, 98);
+    outline: none;
+    background: #323232;
+    padding: 9px 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    text-shadow: none;
+    font-family: sans-serif;
+    border-radius: 100px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    max-width: 150px;
+    transition: all 0.2s ease;
+}
+
+#rules:active {
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+#rules:hover {
+    border: 3px solid #f1c40f;
+    color: #fff;
+    background: #f1c40f;
+}
+
+.rulesWnd {
+    position: fixed;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: #323232bd;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.dicesPrompt {
+    position: fixed;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 340px;
+    background: #FAFAFA;
+    border-radius: 10px;
+    box-shadow: 0px 1px 7px 0px #323232;
+}
+
+.dices {
+    width: 250px;
+    height: 100px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+    background-image: url('/prompt/dice-six-faces-four.png');
+    background-size: 100px 100px;
+}
+
+.chestPrompt {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background: #FDE06B;
+    border-radius: 10px;
+    box-shadow: 0px 3px 4px -1px #707070;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.chestTitle {
+    font-family: 'Cookie';
+    font-size: 20px;
+}
+
+.chancePrompt {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background: #F29A76;
+    border-radius: 10px;
+    box-shadow: 0px 3px 4px -1px #707070;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.chanceTitle {
+    font-family: 'Cookie';
+    font-size: 20px;
+}
+
+.infoPrompt {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background: rgb(245, 245, 245);
+    border-radius: 10px;
+    box-shadow: 0px 3px 4px -1px #707070;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.promptTitle {
+    font-family: 'Cookie';
+    font-size: 20px;
+}
+
+#roll {
+    width: 100px;
+    height: 80px;
+    background: rgb(117, 185, 135);
+    border: 3px solid #34a853;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 41%;
+    margin-top: 50px;
+}
+
+#roll:active {
+    transform: scale(1.05);
+    transition: size 0.2s ease;
+}
+
+#roll:hover {
+    border: 3px solid rgb(117, 185, 135);
+    color: #fff;
+    background: #34a853;
+}
+
+#buy {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background: rgb(255, 110, 110);
+    border: 3px solid rgb(196, 60, 60);
+    border-radius: 5px;
+    outline: none;
+    top: 10px;
+    left: 10px;
+}
+
+#buy:active {
+    transform: scale(1.05);
+    transition: size 0.2s ease;
+}
+
+#buy:hover {
+    border: 3px solid rgb(255, 110, 110);
+    color: #fff;
+    background: rgb(196, 60, 60);
+}
+
+#upgrade {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background: rgb(255, 110, 110);
+    border: 3px solid rgb(196, 60, 60);
+    border-radius: 5px;
+    outline: none;
+    top: 10px;
+    left: 90px;
+}
+
+#upgrade:active {
+    transform: scale(1.05);
+    transition: size 0.2s ease;
+}
+
+#upgrade:hover {
+    border: 3px solid rgb(255, 110, 110);
+    color: #fff;
+    background: rgb(196, 60, 60);
+}
+
+#trade {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background: rgb(255, 110, 110);
+    border: 3px solid rgb(196, 60, 60);
+    border-radius: 5px;
+    outline: none;
+    top: 10px;
+    left: 170px;
+}
+
+#trade:active {
+    transform: scale(1.05);
+    transition: size 0.2s ease;
+}
+
+#trade:hover {
+    border: 3px solid rgb(255, 110, 110);
+    color: #fff;
+    background: rgb(196, 60, 60);
+}
+
+#release {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background: rgb(255, 175, 110);
+    border: 3px solid rgb(241, 122, 42);
+    border-radius: 5px;
+    outline: none;
+    bottom: 25px;
+    left: 95px;
+}
+
+#release:active {
+    transform: scale(1.05);
+    transition: size 0.2s ease;
+}
+
+#release:hover {
+    border: 3px solid rgb(255, 175, 110);
+    color: #fff;
+    background: rgb(241, 122, 42);
+}
+
+#timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Digital';
+    font-size: 34px;
+    color: #13a139;
+    text-shadow: 0px 0px 4px #06ce3b;
+}
+
+#diceTitle {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -20%);
+    font-size: 30px;
+}
+
+.links {
+    margin: 0;
+    width: 150px;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.links a {
+    text-decoration: none;
+    color: rgb(241, 241, 241);
+    border-radius: 1px;
+    padding-left: 3px;
+}
+
+a[href="#description"] {
+    background: #30e7ff6e;
+}
+
+a[href="#goal"] {
+    background: #4efab888;
+}
+
+a[href="#startGame"] {
+    background: #4e98fa6e;
+}
+
+a[href="#game"] {
+    background: #58fa658e;
+}
+
+a[href="#buying"] {
+    background: #5863fa8e;
+}
+
+a[href="#owning"] {
+    background: #a6fa588e;
+}
+
+a[href="#stop"] {
+    background: #9e58fa8e;
+}
+
+a[href="#communal"] {
+    background: #dafa4e6e;
+}
+
+a[href="#stations"] {
+    background: #ec4efa6e;
+}
+
+a[href="#chanse"] {
+    background: #fae04e6e;
+}
+
+a[href="#tax"] {
+    background: #fa58d78e;
+}
+
+a[href="#free"] {
+    background: #faae588e;
+}
+
+a[href="#prison"] {
+    background: #fa586e8e;
+}
+
+a[href="#houses"] {
+    background: #bcfa58b2;
+}
+
+a[href="#hotel"] {
+    background: #4ed2fa6e;
+}
+
+a[href="#deficit"] {
+    background: #4efa656e;
+}
+
+a[href="#sale"] {
+    background: #5863fa8e;
+}
+
+a[href="#pledge"] {
+    background: #58fa898e;
+}
+
+a[href="#bankruptcy"] {
+    background: #6858fa8e;
+}
+
+a[href="#notes"] {
+    background: #cffa588e;
+}
+
+#description {
+    background: #30e7ffa4;
+}
+
+#goal {
+    background: #4efab8bb;
+}
+
+#startGame {
+    background: #4e98fab7;
+}
+
+#game {
+    background: #58fa658e;
+}
+
+#buying {
+    background: #5863faa2;
+}
+
+#owning {
+    background: #a6fa58ad;
+}
+
+#stop {
+    background: #9e58faad;
+}
+
+#communal {
+    background: #dafa4ea8;
+}
+
+#stations {
+    background: #ec4efa6e;
+}
+
+#chanse {
+    background: rgba(252, 255, 96, 0.658);
+}
+
+#tax {
+    background: #fa58d7a4;
+}
+
+#free {
+    background: #faae588e;
+}
+
+#prison {
+    background: #fa586ea2;
+}
+
+#houses {
+    background: #bcfa58b2;
+}
+
+#hotel {
+    background: #4ed2faa2;
+}
+
+#deficit {
+    background: #4efa65a4;
+}
+
+#sale {
+    background: #5863fa8e;
+}
+
+#pledge {
+    background: #58fa898e;
+}
+
+#bankruptcy {
+    background: #6858fa8e;
+}
+
+#notes {
+    background: #cffa588e;
+}
+
+.rules {
+    margin: 0;
+    width: 350px;
+    height: 500px;
+    background: #323232c2;
+    overflow-y: scroll;
+    color: rgb(235, 235, 235);
+}
+
+.rulesWnd * {
+    font-family: 'Comfortaa';
+    font-size: 14px;
+}
+
+.rules div {
+    padding: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: rgba(233, 233, 233, 0.61);
+    border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 255, 255);
+}

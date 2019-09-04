@@ -1,0 +1,450 @@
+@font-face {
+    font-family: Kabel;
+    src: url(../font/Monopoly_Bold.ttf);
+}
+
+* {
+    font-family: 'Kabel';
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.field {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background: url(../img/monopoly.png) no-repeat;
+    background-size: 400px 150px;
+}
+
+.top {
+    width: 745px;
+    margin-top: -614px;
+    display: flex;
+    flex-direction: row;
+    border-top: 4px solid #1BAFBA;
+    border-left: 4px solid #1BAFBA;
+    border-right: 4px solid #1BAFBA;
+}
+
+.bottom {
+    width: 745px;
+    margin-top: 495px;
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 4px solid #1BAFBA;
+    border-left: 4px solid #1BAFBA;
+    border-right: 4px solid #1BAFBA;
+}
+
+.left {
+    display: flex;
+    margin-top: -614px;
+    flex-direction: column-reverse;
+    border-left: 4px solid #1BAFBA;
+}
+
+.right {
+    margin-left: 630px;
+    display: flex;
+    flex-direction: column;
+    border-right: 4px solid #1BAFBA;
+}
+
+.right .plot {
+    width: 111px;
+}
+
+.plot {
+    padding: 0;
+    width: 60px;
+    height: 115px;
+    background: #C0D7BA;
+}
+
+.horizontal {
+    height: 55px;
+    width: 114px;
+}
+
+.square {
+    width: 115px;
+    height: 115px;
+}
+
+.top .plot {
+    border-bottom: 3px solid black;
+}
+
+.top .vertical {
+    border-left: 3px solid black;
+}
+
+.top .goTo {
+    border-left: 3px solid black;
+}
+
+.left .plot {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.right .plot {
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.bottom .plot {
+    border-top: 3px solid black;
+}
+
+.bottom .vertical {
+    border-left: 3px solid black;
+}
+
+.bottom .start {
+    border-left: 3px solid black;
+}
+
+.left .bot,
+.right .bot {
+    border-bottom: none;
+}
+
+.color {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 25px;
+}
+
+.top .color {
+    /* margin-top: 87px; */
+    border-top: 3px solid black;
+}
+
+.bottom .color {
+    margin-top: 0.5px;
+    border-bottom: 3px solid black;
+}
+
+.left .color {
+    /* margin-left: 86px; */
+    width: 25px;
+    height: 100%;
+    border-left: 3px solid black;
+}
+
+.right .color {
+    /* margin-right: 82.5px; */
+    width: 25px;
+    height: 100%;
+    border-right: 3px solid black;
+}
+
+.darkBlue .color {
+    background: #28175E;
+}
+
+.gray .color {
+    background: #ACCBC6;
+}
+
+.blue .color {
+    background: #0173A9;
+}
+
+.green .color {
+    background: #01B749;
+}
+
+.orange .color {
+    background: #EA9B08;
+}
+
+.purple .color {
+    background: #BA1A6A;
+}
+
+.yellow .color {
+    background: #ECD800;
+}
+
+.red .color {
+    background: #E1362E;
+}
+
+.plot {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.start {
+    background: #C0D7BA url("../img/start.gif") no-repeat;
+    background-size: 115px 115px;
+    background-position: -7px -12px;
+}
+
+.parking {
+    background: #C0D7BA url("../img/parking.png") no-repeat;
+    background-size: 110px 110px;
+    background-position: 2px 2px;
+}
+
+.goTo {
+    background: #C0D7BA url("../img/goTo.webp") no-repeat;
+    background-size: 100px 100px;
+    background-position: 4px 7px;
+}
+
+.bottom .chance {
+    background: #C0D7BA url("../img/chance.png") no-repeat;
+    background-size: 70px 70px;
+    background-position: center center;
+}
+
+.top .chance {
+    background: #C0D7BA url("../img/chance_b_large.png") no-repeat;
+    background-size: 70px 70px;
+    background-position: center center;
+}
+
+.bottom .railroad,
+.top .railroad {
+    background: #C0D7BA url("..//img/train_large.gif") no-repeat;
+    background-size: 50px 50px;
+    background-position: 2px 45px;
+}
+
+.right .railroad,
+.left .railroad {
+    background: #C0D7BA url("../img/train_large_h.gif") no-repeat;
+    background-size: 40px 40px;
+    background-position: 70px center;
+}
+
+
+/* .left .railroad {
+    background: #C0D7BA url("../img/train_large_l.gif") no-repeat;
+    background-size: 50px 50px;
+    background-position: 10px center;
+} */
+
+.bottom .chest {
+    background: #C0D7BA url("../img/chest.png") no-repeat;
+    background-size: 50px 50px;
+    background-position: 2px 45px;
+}
+
+.electric {
+    background: #C0D7BA url("../img/lightBulb_v.gif") no-repeat;
+    background-size: 44px 55px;
+    background-position: 60px center;
+}
+
+.jail {
+    background: #C0D7BA url("../img/jail.png") no-repeat;
+    background-size: 110px 110px;
+}
+
+.right .chance {
+    background: #C0D7BA url("../img/chance_h.png") no-repeat;
+    background-size: 70px 70px;
+    background-position: center center;
+}
+
+.price {
+    font-size: 10px;
+}
+
+.top .card .text {
+    margin-top: 10px;
+}
+
+.top .card .price {
+    margin-top: 42px;
+    margin-bottom: 5px;
+}
+
+.water {
+    background: #C0D7BA url("../img/water.gif") no-repeat;
+    background-size: 50px 40px;
+    background-position: 2px 45px;
+}
+
+.bottom .card .text {
+    margin-top: 10px;
+}
+
+.bottom .card .price {
+    margin-top: 26px;
+    margin-bottom: 5px;
+}
+
+.top .railroad .price,
+.bottom .railroad .price,
+.top .water .price {
+    margin-top: 65px;
+    margin-bottom: 5px;
+}
+
+.top .chance .text,
+.bottom .chance .text {
+    margin-top: 8px;
+}
+
+.bottom .card {
+    justify-content: space-between;
+}
+
+.incomeTax .text {
+    margin-top: 50%;
+}
+
+.incomeTax .price {
+    display: none;
+}
+
+.chest .text {
+    margin-top: 10px;
+}
+
+.right .chance {
+    text-align: center;
+}
+
+.luxuryTax {
+    background: #C0D7BA url("../img/luxuryTax.png") no-repeat;
+    background-size: 50px 50px;
+    background-position: 55px center;
+}
+
+.left .chest,
+.right .chest {
+    background: #C0D7BA url("../img/chest.png") no-repeat;
+    background-size: 50px 50px;
+    background-position: 55px center;
+}
+
+.top .color,
+.bottom .color {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.right .color,
+.left .color {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.star {
+    width: 15px;
+    height: 15px;
+    background: url("../img/star.png") no-repeat;
+    background-size: 15px 15px;
+    background-position: center center;
+}
+
+.bigStar {
+    width: 18px;
+    height: 18px;
+    background: url("../img/big_star.png") no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.right .star,
+.left .star {
+    margin-top: 1px;
+    margin-left: 4px;
+}
+
+.right .bigStar,
+.left .bigStar {
+    margin-left: 2.5px;
+}
+
+.top .star,
+.bottom .star {
+    margin-top: 3px;
+}
+
+.top .bigStar,
+.bottom .bigStar {
+    margin-top: 2px;
+}
+
+.left .plot,
+.right .plot {
+    flex-direction: row;
+}
+
+.left .plot {
+    justify-content: space-evenly;
+}
+
+.left .text,
+.right .text {
+    width: 86px;
+    height: 50px;
+    padding-top: 5px;
+}
+
+.left .price,
+.right .price {
+    margin-top: 10px;
+}
+
+.right .bot .price {
+    margin-top: 25px;
+}
+
+.right .chance .text {
+    margin-top: 3px;
+    margin-left: 5px;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+}
+
+.left .chest,
+.right .chest,
+.left .railroad,
+.right .railroad {
+    justify-content: left;
+}
+
+.left .chest .text,
+.right .chest .text {
+    margin-left: -10px;
+}
+
+.left .railroad .text,
+.right .railroad .text {
+    margin-left: -4px;
+}
+
+.electric .text {
+    margin-left: -40px;
+}
+
+.luxuryTax .text {
+    margin-left: -9px;
+}
+
+.luxuryTax .price {
+    margin-top: 20px;
+}
